@@ -1,5 +1,6 @@
-╔════════════════════════════════════════════════════════════════╗
-║  SaveLobby PROPRIETARY SOFTWARE - DEVELOPMENT BUILD 0.1a       ║
+```
+╔════════════════════════════════════════════════════════════════╗       
+║           SaveLobby PROPRIETARY SOFTWARE - DEVELOPMENT         ║
 ╠════════════════════════════════════════════════════════════════╣
 ║ AUTHOR'S DIGITAL SIGNATURE: DamianEvee                         ║
 ║ Copyright © 2026 SaveLobby - TODOS LOS DERECHOS RESERVADOS.    ║
