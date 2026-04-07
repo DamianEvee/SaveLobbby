@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveLobby - Por gamers, para gamers</title>
+
+    <link rel="manifest" href="./public/manifest.json">
+
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SaveLobby</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="global-search" placeholder="Buscar juegos, guías, mods...">
+            </div>
+            <div class="user-menu">
+                <span id="username-display">Invitado</span>
+                <button class="btn-login" id="login-btn">Iniciar Sesión</button>
+                <button class="btn-donate" onclick="window.location.href='./pages/donate.html'">Donar</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <aside class="sidebar-left" id="filters-sidebar">
+            <h3>Filtrar por Etiquetas</h3>
+            <ul>
+                <li><input type="checkbox" id="tag-mods" value="MODS"> <label for="tag-mods">MODS</label></li>
+                <li><input type="checkbox" id="tag-guia" value="GUIA"> <label for="tag-guia">GUÍA</label></li>
+                <li><input type="checkbox" id="tag-dudas" value="DUDAS"> <label for="tag-dudas">DUDAS</label></li>
+                <li><input type="checkbox" id="tag-ayuda" value="AYUDA"> <label for="tag-ayuda">AYUDA</label></li>
+            </ul>
+        </aside>
+
+        <section class="feed" id="main-feed">
+            <div class="create-post-banner">
+                <h2>¿A qué estás jugando?</h2>
+                <button id="create-post-btn">Crear Publicación</button>
+            </div>
+
+            <div class="popular-games">
+                <h2>Juegos Populares</h2>
+                <div class="games-grid" id="games-container">
+                    <p class="loading-text">Cargando la lobby...</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar-right">
+            <div class="ad-space">
+                <p>Espacio Publicitario</p>
+            </div>
+            <div class="premium-creators">
+                <h3>Creadores Destacados</h3>
+                <p>Apoya y únete a zonas exclusivas.</p>
+                <button class="btn-premium" onclick="window.location.href='./pages/private-zone.html'">Ver Zonas VIP</button>
+            </div>
+        </aside>
+
+    </main>
+
+    <div id="post-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nueva Publicación</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="game-input">Selecciona o añade el juego:</label>
+                    <input type="text" id="game-input" list="games-list" placeholder="Ej: Elden Ring, GTA VI...">
+                    <datalist id="games-list"></datalist>
+                </div>
+                
+                <div class="form-group">
+                    <label>Etiqueta tu post (Mínimo 1):</label>
+                    <div class="tag-selector">
+                        <label><input type="checkbox" name="post-tag" value="MODS"> MODS</label>
+                        <label><input type="checkbox" name="post-tag" value="GUIA"> GUÍA</label>
+                        <label><input type="checkbox" name="post-tag" value="DUDAS"> DUDAS</label>
+                        <label><input type="checkbox" name="post-tag" value="AYUDA"> AYUDA</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="post-content">Tu mensaje:</label>
+                    <textarea id="post-content" rows="4" placeholder="Escribe los detalles aquí..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="media-upload">Subir Foto/Vídeo:</label>
+                    <input type="file" id="media-upload" accept="image/*,video/*">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="submit-post-btn" class="btn-donate">Publicar en la Lobby</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h2 id="auth-title">Iniciar Sesión</h2>
+                <button id="close-auth-btn" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="auth-username">Nombre de Usuario:</label>
+                    <input type="text" id="auth-username" placeholder="Ej: CloudStrife99">
+                </div>
+                
+                <div class="form-group">
+                    <label for="auth-password">Contraseña:</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" style="width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-family: var(--font-main);">
+                </div>
+            </div>
+
+            <div class="modal-footer" style="display: flex; flex-direction: column; gap: 1rem; text-align: center; margin-top: 1.5rem;">
+                <button id="submit-auth-btn" class="btn-donate">Entrar a la Lobby</button>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    ¿No tienes cuenta? <a href="#" id="toggle-auth-mode" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">Regístrate aquí</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+</html>
