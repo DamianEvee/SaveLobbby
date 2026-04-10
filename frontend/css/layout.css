@@ -75,3 +75,15 @@ header#main-header {
         gap: 1rem;
     }
 }
+
+/* =========================================
+   Contenedor de Una Columna (Donaciones, etc)
+   ========================================= */
+.single-column-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

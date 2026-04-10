@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donar - SaveLobby</title>
+
+    <!-- Usamos rutas relativas subiendo un nivel, ya que estamos en /pages -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1><a href="../index.html" style="text-decoration: none; color: inherit;">SaveLobby</a></h1>
+            </div>
+            <div class="user-menu">
+                <span id="username-display">Invitado</span>
+                <button class="btn-login" id="login-btn">Iniciar Sesión</button>
+                <button class="btn-inicio" onclick="window.location.href='../index.html'">Inicio</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="single-column-container">
+        <section class="donate-header">
+            <h2>Apoya a SaveLobby</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+                Mantener los servidores, moderar la comunidad y crear nuevas funciones cuesta dinero.
+                Con tu apoyo nos ayudas a seguir mejorando y a mantener este espacio para todos los gamers.
+            </p>
+        </section>
+
+        <section class="donation-tiers">
+            <!-- Tier Básico -->
+            <div class="tier-card">
+                <h3>Soldado</h3>
+                <div class="price">€5<span>/mes</span></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">El apoyo ideal para empezar.</p>
+                <ul>
+                    <li>Insignia de Donador en el perfil</li>
+                    <li>Sin anuncios en la plataforma</li>
+                </ul>
+                <button class="btn-donate" style="width: 100%; margin-top: 1rem;">Elegir Plan</button>
+            </div>
+
+            <!-- Tier Premium -->
+            <div class="tier-card premium">
+                <h3>Comandante</h3>
+                <div class="price">€15<span>/mes</span></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Para los verdaderos veteranos.</p>
+                <ul>
+                    <li>Insignia VIP </li>
+                    <li>Acceso a Zonas Privadas VIP*</li>
+                    <li>Colores de nombre personalizados</li>
+                    <li>Reconocimientos en streams/eventos</li>
+                </ul>
+                <button class="btn-premium"
+                    style="width: 100%; margin-top: 1rem; border-radius: 20px; font-weight: bold; background: #ffd700; color: #000;">Elegir
+                    Plan</button>
+            </div>
+
+            <!-- Tier Héroe -->
+            <div class="tier-card">
+                <h3>Leyenda</h3>
+                <div class="price">€25<span>/mes</span></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Soporte nivel leyenda.</p>
+                <ul>
+                    <li>Todo lo anterior</li>
+                    <li>Insignia ANIMADA</li>
+                    <li>Tu nombre en la página de créditos</li>
+                    <li>Acceso anticipado a nuevas funciones</li>
+                </ul>
+                <button class="btn-donate" style="width: 100%; margin-top: 1rem;">Elegir Plan</button>
+            </div>
+        </section>
+
+        <section class="custom-donation">
+            <h3>¿Prefieres una donación única?</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Cualquier cantidad nos ayuda inmensamente.
+            </p>
+            <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <input type="number" min="1" placeholder="Ej: 10">
+                <button class="btn-donate" style="padding: 0.8rem 2rem; font-size: 1.1rem;">Donar</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
