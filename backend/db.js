@@ -2,11 +2,11 @@ const { Pool } = require('pg');
 
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
-  user: 'EveeXDreams',
+  user: '',
   host: 'localhost',
-  database: 'savelobby',
-  password: 'Octubre2823@',
-  port: 5432,
+  database: '',
+  password: '@',
+  port: ,
 });
 
 // Verificamos que la conexión funciona correctamente al arrancar
